@@ -8,6 +8,7 @@ loop do
 	elsif response != response.upcase #regex =~ /[a-z]*/ , ish
 		puts "HUH?! SPEAK UP, SONNY!"
 	else
-		puts "NO, NOT SINCE 1938!"
+		year = rand(1930..1951)
+		puts "NO, NOT SINCE #{year}!"
 	end
 end
