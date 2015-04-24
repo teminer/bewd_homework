@@ -12,7 +12,12 @@ most_recent_booklists = parsed['BookLists'][0]['BookListEntries']
 most_recent_booklists.each_with_index do |booklist_hash,i|
 	if i<20
 		puts "#{i+1}. #{booklist_hash['Title']} by #{booklist_hash['Author']}"
-		puts "#{booklist_hash['BriefDescription']}"
+		null_description = parsed['BookLists'][0]['BriefDescription']
+		if null_description = true
+			puts "#{booklist_hash['BriefDescription']}"
+		else
+			puts "This is a good book!"
+		end
 		puts "\n------------------------------------------------------\n"
 		i=i+1
 	end
