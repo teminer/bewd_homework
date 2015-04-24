@@ -9,11 +9,13 @@ parsed = usa_books.parsed_response
 most_recent_booklists = parsed['BookLists'][0]['BookListEntries']
 
 #output title, author & brief description of the first 20 books from most recently published list
+genre = parsed['BookLists'][0]['BookListEntries']['Class']
+
 most_recent_booklists.each_with_index do |booklist_hash,i|
-	if i<20
+	if i<20 && genre == 'Fiction'
 		puts "#{i+1}. #{booklist_hash['Title']} by #{booklist_hash['Author']}"
 		null_description = parsed['BookLists'][0]['BriefDescription']
-		if null_description = true
+		if null_description == true
 			puts "#{booklist_hash['BriefDescription']}"
 		else
 			puts "This is a good book!"
