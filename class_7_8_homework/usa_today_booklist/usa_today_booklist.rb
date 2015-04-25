@@ -19,7 +19,7 @@ else
 				if description.nil?
 					puts "This is a good book!"
 				else
-					puts "#{booklist_hash['BriefDescription']}"
+					puts "#{description}"
 				end
 			puts "\n------------------------------------------------------\n"
 	end
