@@ -1,3 +1,13 @@
 <h1><%= @message %></h1>
 
-<p>Welcome to your match history, irl <%= @summoner_name %>!</p>
+<p>Welcome to your match history irl <%= @summoner_name %>!</p>
+<p>url: <%= @url %></p>
+<p>ID: <%= @summoner_id %></p>
+
+<ul>
+	<% if @match_history.empty? %>
+			<p> Derp. There are no matches! </p>
+	<% else %>
+			<li><%= "#{@match_history['#{@champion}']}: \n-------------------------\n" %> </li>
+	<% end %>
+</ul>
