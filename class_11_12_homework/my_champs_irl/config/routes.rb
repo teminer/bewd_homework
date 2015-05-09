@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  get '/' => 'mychamp#home'
+  get '/' => 'welcome#home'
 
-  get '/matchhistory' => 'mychamp#irl'
+  post '/matchhistory' => 'welcome#irl'
 
 end
